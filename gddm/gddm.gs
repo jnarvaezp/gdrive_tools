@@ -49,6 +49,14 @@ var TARGET_FOLDER = "";
  * Rows start at 1, not zero based!!!  
  *
  */
+
+// Add option to menu spreadsheet
+
+function onOpen() {
+  var menu = [{name: 'Generate Option', functionName: 'generateEmployeeDatasheet'}];
+  SpreadsheetApp.getActive().addMenu('Menu Name', menu);
+}
+
 function getCurrentRow() {
   var currentRow = SpreadsheetApp.getActiveSheet().getActiveSelection().getRowIndex();
   return currentRow;
